@@ -329,6 +329,22 @@
   max-width: 160px;
 }
 
+/* Process step badge inside 3D cards */
+.process-step-badge {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  border-color: rgba(37, 99, 235, 0.3) !important;
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  border-radius: 50% !important;
+}
+
+.service-card-3d:hover .process-step-badge {
+  background: linear-gradient(135deg, #1d4ed8, #001F3F) !important;
+  border-color: rgba(37, 99, 235, 0.5) !important;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.35), 0 0 0 5px rgba(37, 99, 235, 0.08) !important;
+}
+
 /* ===== Partner Cards ===== */
 .partner-card {
   display: flex;

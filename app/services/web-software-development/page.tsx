@@ -144,12 +144,16 @@ export default function WebSoftwareDevelopmentPage() {
               { step: '03', title: 'Build & Test', desc: 'Iterative development with regular demos. You see progress every step of the way.' },
               { step: '04', title: 'Launch & Support', desc: 'Deployment, staff training, and an ongoing support agreement so you\'re never left on your own.' },
             ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-blue-600 text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">
-                  {item.step}
+              <div key={item.step} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{ alignItems: 'center', textAlign: 'center' }}>
+                  <div className="process-step-badge card-icon-3d">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-bold text-navy-500 mb-2">{item.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-lg font-bold text-navy-500 mb-2">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
