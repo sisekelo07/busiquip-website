@@ -14,7 +14,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <Image
-          src="https://images.pexels.com/photos/19317897/pexels-photo-19317897.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="/contact-hero.jpg"
           alt="Contact BusiQuip"
           fill
           className="object-cover"
