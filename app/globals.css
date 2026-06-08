@@ -329,6 +329,25 @@
   max-width: 160px;
 }
 
+/* Contact icon wrap inside 3D cards */
+.contact-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.service-card-3d:hover .contact-icon-wrap {
+  transform: scale(1.12);
+  background: linear-gradient(135deg, #1d4ed8, #001F3F);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
 /* Process step badge inside 3D cards */
 .process-step-badge {
   background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;

@@ -1,5 +1,5 @@
 import ContactForm from '@/components/ContactForm';
-import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -42,68 +42,68 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
             {/* Info Column */}
-            <div className="lg:col-span-1 space-y-8">
+            <div className="lg:col-span-1 space-y-6">
               {/* Phone */}
-              <div className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="text-white" size={22} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-navy-500 mb-1">Phone</h3>
-                  <a href="tel:+26824040156" className="text-blue-600 font-semibold text-sm hover:underline block">
-                    (+268) 2404 0156
-                  </a>
-                  <a href="tel:+26824041422" className="text-blue-600 font-semibold text-sm hover:underline block">
-                    (+268) 2404 1422
-                  </a>
-                  <p className="text-xs text-gold-600 mt-2 font-semibold">24/7 Emergency Support</p>
+              <div className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{flexDirection:'row',gap:'1rem',alignItems:'flex-start'}}>
+                  <div className="contact-icon-wrap"><Phone className="text-white" size={22} /></div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-navy-500 mb-1 text-lg">Phone</h3>
+                    <a href="tel:+26824040156" className="text-blue-600 font-semibold text-sm hover:underline block">(+268) 2404 0156</a>
+                    <a href="tel:+26824041422" className="text-blue-600 font-semibold text-sm hover:underline block">(+268) 2404 1422</a>
+                    <p className="text-xs text-gold-600 mt-2 font-semibold">24/7 Emergency Support</p>
+                  </div>
                 </div>
               </div>
 
               {/* Email */}
-              <div className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Mail className="text-white" size={22} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-navy-500 mb-1">Email</h3>
-                  <a href="mailto:info@busiquip.com" className="text-blue-600 text-sm hover:underline block">
-                    info@busiquip.com
-                  </a>
-                  <a href="mailto:support@busiquip.com" className="text-blue-600 text-sm hover:underline block">
-                    support@busiquip.com
-                  </a>
+              <div className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{flexDirection:'row',gap:'1rem',alignItems:'flex-start'}}>
+                  <div className="contact-icon-wrap"><Mail className="text-white" size={22} /></div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-navy-500 mb-1 text-lg">Email</h3>
+                    <a href="mailto:info@busiquip.com" className="text-blue-600 text-sm hover:underline block">info@busiquip.com</a>
+                    <a href="mailto:support@busiquip.com" className="text-blue-600 text-sm hover:underline block">support@busiquip.com</a>
+                  </div>
                 </div>
               </div>
 
               {/* Address */}
-              <div className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="text-white" size={22} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-navy-500 mb-1">Office</h3>
-                  <p className="text-slate-600 text-sm">
-                    Bypass Mantsholo Road<br />
-                    Eveni, Mbabane<br />
-                    Eswatini
-                  </p>
+              <div className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{flexDirection:'row',gap:'1rem',alignItems:'flex-start'}}>
+                  <div className="contact-icon-wrap"><MapPin className="text-white" size={22} /></div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-navy-500 mb-1 text-lg">Office</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Bypass Mantsholo Road<br />
+                      Eveni, Mbabane<br />
+                      Eswatini
+                    </p>
+                  </div>
                 </div>
               </div>
 
               {/* Hours */}
-              <div className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Clock className="text-white" size={22} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-navy-500 mb-1">Business Hours</h3>
-                  <p className="text-slate-600 text-sm">
-                    Mon - Fri: 8:00 AM – 5:00 PM<br />
-                    Saturday: 8:00 AM – 1:00 PM<br />
-                    Sunday: Closed
-                  </p>
-                  <p className="text-xs text-gold-600 mt-2 font-semibold">Emergency: 24/7</p>
+              <div className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{flexDirection:'row',gap:'1rem',alignItems:'flex-start'}}>
+                  <div className="contact-icon-wrap"><Clock className="text-white" size={22} /></div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-navy-500 mb-1 text-lg">Business Hours</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Mon - Fri: 8:00 AM – 5:00 PM<br />
+                      Saturday: 8:00 AM – 1:00 PM<br />
+                      Sunday: Closed
+                    </p>
+                    <p className="text-xs text-gold-600 mt-2 font-semibold">Emergency: 24/7</p>
+                  </div>
                 </div>
               </div>
 
