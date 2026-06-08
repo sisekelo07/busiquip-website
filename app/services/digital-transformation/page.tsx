@@ -75,10 +75,14 @@ export default function DigitalTransformationPage() {
               { step: '03', title: 'Implement', desc: 'Roll out changes with minimal disruption, starting with quick wins.' },
               { step: '04', title: 'Optimise', desc: 'Monitor results, train staff, and continuously improve after go-live.' },
             ].map((item) => (
-              <div key={item.step} className="card text-center">
-                <div className="text-4xl font-bold text-gold-500 mb-3">{item.step}</div>
-                <h3 className="text-xl font-bold text-navy-500 mb-3">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              <div key={item.step} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{alignItems:'center',textAlign:'center'}}>
+                  <div className="card-icon-3d" style={{fontSize:'18px',fontWeight:800,color:'#D4AF37'}}>{item.step}</div>
+                  <h3 className="text-xl font-bold text-navy-500 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>

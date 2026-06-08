@@ -74,10 +74,14 @@ export default function CybersecurityServicesPage() {
               { icon: '📄', title: 'Data Disposal', desc: 'Kobra shredders for high-security document destruction. Prevent sensitive data leaving your premises.' },
               { icon: '🎓', title: 'Human Layer', desc: 'Staff training on phishing, social engineering and safe data handling — the most overlooked security layer.' },
             ].map((item) => (
-              <div key={item.title} className="card text-center">
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-navy-500 mb-3">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{alignItems:'center',textAlign:'center'}}>
+                  <div className="card-icon-3d">{item.icon}</div>
+                  <h3 className="text-xl font-bold text-navy-500 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>

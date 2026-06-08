@@ -77,10 +77,14 @@ export default function StrategicITConsultingPage() {
               { icon: '🗺️', title: 'Clear Roadmap', desc: 'A prioritised, costed plan for the next 12–36 months that the board and IT team can follow together.' },
               { icon: '📊', title: 'Measurable Outcomes', desc: 'Every recommendation is tied to a business outcome — cost reduction, uptime improvement, or revenue enablement.' },
             ].map((item) => (
-              <div key={item.title} className="card text-center">
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-navy-500 mb-3">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              <div key={item.title} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{alignItems:'center',textAlign:'center'}}>
+                  <div className="card-icon-3d">{item.icon}</div>
+                  <h3 className="text-xl font-bold text-navy-500 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
