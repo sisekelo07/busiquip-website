@@ -349,7 +349,7 @@ export default function Home() {
       </section>
 
       {/* Clients Slideshow */}
-      <section className="py-20 bg-white border-y border-slate-200 overflow-hidden">
+      <section className="py-20 bg-slate-50 border-y border-slate-200 overflow-hidden">
         <div className="container-max mb-14 text-center">
           <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">Our Clients</p>
           <h2 className="text-4xl font-bold text-navy-500 mb-4">
@@ -360,61 +360,65 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Marquee row 1 — scrolls left */}
-        <div className="relative">
+        {/* Row 1 — scrolls left */}
+        <div className="relative mb-5">
+          <div className="marquee-fade-left" />
+          <div className="marquee-fade-right" />
           <div className="clients-marquee clients-marquee-left">
-            {[
-              { name: 'Ministry of Defence', abbr: 'MoD', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
-              { name: 'Standard Bank', abbr: 'SB', sector: 'Finance', bg: '#0033A0', accent: '#ffffff' },
-              { name: 'University of Eswatini', abbr: 'UNISWA', sector: 'Education', bg: '#6B2D8B', accent: '#ffffff' },
-              { name: 'Swaziland Electricity Board', abbr: 'SEB', sector: 'Utilities', bg: '#D4AF37', accent: '#001F3F' },
-              { name: 'Eswatini Bank', abbr: 'EB', sector: 'Finance', bg: '#004B87', accent: '#F5A623' },
-              { name: 'High Court', abbr: 'HC', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
-              { name: 'FINCORP', abbr: 'FC', sector: 'Finance', bg: '#00543A', accent: '#ffffff' },
-              { name: 'Exams Council', abbr: 'EC', sector: 'Education', bg: '#1A5276', accent: '#ffffff' },
-              { name: 'Eswatini Water Services', abbr: 'EWS', sector: 'Utilities', bg: '#1A6B8A', accent: '#ffffff' },
-              { name: 'City Council Mbabane', abbr: 'CCM', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
-              { name: 'Tibiyo Insurance', abbr: 'TI', sector: 'Finance', bg: '#154360', accent: '#D4AF37' },
-              { name: 'Usutu Forest', abbr: 'UF', sector: 'Utilities', bg: '#196F3D', accent: '#ffffff' },
-            ].flatMap((c, i) => [c, { ...c, key: `${i}-dup` }]).map((c, i) => (
-              <div key={i} className="client-tile">
-                <div className="client-tile-logo" style={{ background: c.bg, color: c.accent }}>
-                  {c.abbr}
-                </div>
-                <div className="client-tile-body">
-                  <p className="client-tile-name">{c.name}</p>
-                  <span className="client-tile-sector">{c.sector}</span>
-                </div>
+            {([
+              { name: 'Standard Bank', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Standard_Bank_Group_Logo.svg/320px-Standard_Bank_Group_Logo.svg.png' },
+              { name: 'Eswatini Bank', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Eswatini_Bank-Logo.png' },
+              { name: 'FINCORP', logo: 'https://www.fincorp.co.sz/wp-content/uploads/2019/06/Artboard-1-3.png' },
+              { name: 'Eswatini Electricity Company', logo: 'https://www.eec.co.sz/logo/EswatiniElectrictyCompanyLogo.png' },
+              { name: 'University of Eswatini', logo: 'https://upload.wikimedia.org/wikipedia/en/6/60/University_of_Eswatini_logo.svg' },
+              { name: 'Tibiyo TakaNgwane', logo: 'https://upload.wikimedia.org/wikipedia/en/d/d8/Tibiyo_Taka_Ngwane_Eswatini_Logo.png' },
+            ] as { name: string; logo: string }[]).concat([
+              { name: 'Standard Bank', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Standard_Bank_Group_Logo.svg/320px-Standard_Bank_Group_Logo.svg.png' },
+              { name: 'Eswatini Bank', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Eswatini_Bank-Logo.png' },
+              { name: 'FINCORP', logo: 'https://www.fincorp.co.sz/wp-content/uploads/2019/06/Artboard-1-3.png' },
+              { name: 'Eswatini Electricity Company', logo: 'https://www.eec.co.sz/logo/EswatiniElectrictyCompanyLogo.png' },
+              { name: 'University of Eswatini', logo: 'https://upload.wikimedia.org/wikipedia/en/6/60/University_of_Eswatini_logo.svg' },
+              { name: 'Tibiyo TakaNgwane', logo: 'https://upload.wikimedia.org/wikipedia/en/d/d8/Tibiyo_Taka_Ngwane_Eswatini_Logo.png' },
+            ]).map((c, i) => (
+              <div key={i} className="client-logo-tile">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={c.logo} alt={c.name} loading="lazy" className="client-logo-img" />
+                <p className="client-logo-name">{c.name}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Marquee row 2 — scrolls right (reverse) */}
-        <div className="relative mt-5">
+        {/* Row 2 — scrolls right */}
+        <div className="relative">
+          <div className="marquee-fade-left" />
+          <div className="marquee-fade-right" />
           <div className="clients-marquee clients-marquee-right">
-            {[
-              { name: 'Tibiyo Insurance', abbr: 'TI', sector: 'Finance', bg: '#154360', accent: '#D4AF37' },
-              { name: 'Usutu Forest', abbr: 'UF', sector: 'Utilities', bg: '#196F3D', accent: '#ffffff' },
-              { name: 'City Council Mbabane', abbr: 'CCM', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
-              { name: 'Eswatini Water Services', abbr: 'EWS', sector: 'Utilities', bg: '#1A6B8A', accent: '#ffffff' },
-              { name: 'Exams Council', abbr: 'EC', sector: 'Education', bg: '#1A5276', accent: '#ffffff' },
-              { name: 'FINCORP', abbr: 'FC', sector: 'Finance', bg: '#00543A', accent: '#ffffff' },
-              { name: 'High Court', abbr: 'HC', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
-              { name: 'Eswatini Bank', abbr: 'EB', sector: 'Finance', bg: '#004B87', accent: '#F5A623' },
-              { name: 'Swaziland Electricity Board', abbr: 'SEB', sector: 'Utilities', bg: '#D4AF37', accent: '#001F3F' },
-              { name: 'University of Eswatini', abbr: 'UNISWA', sector: 'Education', bg: '#6B2D8B', accent: '#ffffff' },
-              { name: 'Standard Bank', abbr: 'SB', sector: 'Finance', bg: '#0033A0', accent: '#ffffff' },
-              { name: 'Ministry of Defence', abbr: 'MoD', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
-            ].flatMap((c, i) => [c, { ...c, key: `${i}-dup` }]).map((c, i) => (
-              <div key={i} className="client-tile">
-                <div className="client-tile-logo" style={{ background: c.bg, color: c.accent }}>
-                  {c.abbr}
-                </div>
-                <div className="client-tile-body">
-                  <p className="client-tile-name">{c.name}</p>
-                  <span className="client-tile-sector">{c.sector}</span>
-                </div>
+            {([
+              { name: 'Eswatini Water Services', logo: 'https://ewsc.co.sz/wp-content/uploads/2024/10/Artboard-1neth1-1.svg' },
+              { name: 'Exams Council of Eswatini', logo: 'https://www.examscouncil.org.sz/img/examslogo1.png' },
+              { name: 'City Council of Mbabane', logo: 'https://www.mbabane.org.sz/wp-content/uploads/2022/10/mba_logo.gif' },
+              { name: 'High Court of Eswatini', logo: 'https://www.judiciary.org.sz/assets/images/Designer.png' },
+              { name: 'Ministry of Defence', logo: null, abbr: 'MoD', bg: '#001F3F', accent: '#D4AF37' },
+              { name: 'Usutu Forest Products', logo: null, abbr: 'UF', bg: '#196F3D', accent: '#ffffff' },
+            ] as { name: string; logo: string | null; abbr?: string; bg?: string; accent?: string }[]).concat([
+              { name: 'Eswatini Water Services', logo: 'https://ewsc.co.sz/wp-content/uploads/2024/10/Artboard-1neth1-1.svg' },
+              { name: 'Exams Council of Eswatini', logo: 'https://www.examscouncil.org.sz/img/examslogo1.png' },
+              { name: 'City Council of Mbabane', logo: 'https://www.mbabane.org.sz/wp-content/uploads/2022/10/mba_logo.gif' },
+              { name: 'High Court of Eswatini', logo: 'https://www.judiciary.org.sz/assets/images/Designer.png' },
+              { name: 'Ministry of Defence', logo: null, abbr: 'MoD', bg: '#001F3F', accent: '#D4AF37' },
+              { name: 'Usutu Forest Products', logo: null, abbr: 'UF', bg: '#196F3D', accent: '#ffffff' },
+            ]).map((c, i) => (
+              <div key={i} className="client-logo-tile">
+                {c.logo ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img src={c.logo} alt={c.name} loading="lazy" className="client-logo-img" />
+                ) : (
+                  <div className="client-logo-abbr" style={{ background: c.bg, color: c.accent }}>
+                    {c.abbr}
+                  </div>
+                )}
+                <p className="client-logo-name">{c.name}</p>
               </div>
             ))}
           </div>
