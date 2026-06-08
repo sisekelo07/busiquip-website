@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,11 +12,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
-                <span className="text-navy-500 font-bold">BQ</span>
-              </div>
-              <h3 className="font-bold text-lg">BusiQuip</h3>
+            <div className="mb-4">
+              <Image
+                src="/logo.svg"
+                alt="BusiQuip - Driving Africa's Digital Future"
+                width={190}
+                height={60}
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-slate-300 text-sm mb-4">
               Driving Africa's Digital Future since 1983

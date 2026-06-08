@@ -1,6 +1,7 @@
-import Hero from '@/components/Hero';
 import ContactForm from '@/components/ContactForm';
 import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Contact BusiQuip | Enterprise Technology Support',
@@ -10,112 +11,128 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <Hero
-        title="Get in Touch with Our Enterprise Team"
-        subtitle="We're ready to help you achieve your IT goals"
-        variant="simple"
-      />
+      {/* Hero */}
+      <section className="relative py-32 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80"
+          alt="Contact BusiQuip"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-500/92 to-blue-700/85"></div>
+        <div className="container-max relative z-10">
+          <nav className="text-sm text-slate-300 mb-8">
+            <Link href="/" className="hover:text-gold-400">Home</Link>
+            <span className="mx-2">/</span>
+            <span>Contact</span>
+          </nav>
+          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
+            Get in Touch with Our Enterprise Team
+          </h1>
+          <p className="text-xl text-slate-200">
+            We're ready to help you achieve your IT goals. Response within 2 hours guaranteed.
+          </p>
+        </div>
+      </section>
 
+      {/* Contact Section */}
       <section className="section-padding bg-white">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Information */}
-            <div className="lg:col-span-1">
-              <div className="space-y-8">
-                {/* Phone */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-blue-600" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Phone</h3>
-                    <p className="text-blue-600 font-semibold mb-1">(+268) 2404 0156 / 2404 1422</p>
-                    <p className="text-sm text-slate-600">
-                      Mon-Fri: 8:00 AM - 5:00 PM<br />
-                      Sat: 8:00 AM - 1:00 PM
-                    </p>
-                    <p className="text-xs text-gold-600 mt-2 font-semibold">24/7 Emergency Support Available</p>
-                  </div>
-                </div>
 
-                {/* Email */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-blue-600" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Email</h3>
-                    <p className="text-slate-600 text-sm">
-                      <a href="mailto:info@busiquip.com" className="text-blue-600 hover:underline">
-                        info@busiquip.com
-                      </a>
-                    </p>
-                    <p className="text-slate-600 text-sm">
-                      <a href="mailto:support@busiquip.com" className="text-blue-600 hover:underline">
-                        support@busiquip.com
-                      </a>
-                    </p>
-                  </div>
+            {/* Info Column */}
+            <div className="lg:col-span-1 space-y-8">
+              {/* Phone */}
+              <div className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="text-white" size={22} />
                 </div>
+                <div>
+                  <h3 className="font-bold text-navy-500 mb-1">Phone</h3>
+                  <a href="tel:+26824040156" className="text-blue-600 font-semibold text-sm hover:underline block">
+                    (+268) 2404 0156
+                  </a>
+                  <a href="tel:+26824041422" className="text-blue-600 font-semibold text-sm hover:underline block">
+                    (+268) 2404 1422
+                  </a>
+                  <p className="text-xs text-gold-600 mt-2 font-semibold">24/7 Emergency Support</p>
+                </div>
+              </div>
 
-                {/* Address */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-blue-600" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Office Location</h3>
-                    <p className="text-slate-600 text-sm">
-                      Bypass Mantsholo Road<br />
-                      Eveni, Mbabane<br />
-                      Eswatini
-                    </p>
-                  </div>
+              {/* Email */}
+              <div className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Mail className="text-white" size={22} />
                 </div>
+                <div>
+                  <h3 className="font-bold text-navy-500 mb-1">Email</h3>
+                  <a href="mailto:info@busiquip.com" className="text-blue-600 text-sm hover:underline block">
+                    info@busiquip.com
+                  </a>
+                  <a href="mailto:support@busiquip.com" className="text-blue-600 text-sm hover:underline block">
+                    support@busiquip.com
+                  </a>
+                </div>
+              </div>
 
-                {/* Hours */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-blue-600" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Business Hours</h3>
-                    <p className="text-slate-600 text-sm">
-                      Monday - Friday: 8:00 AM - 5:00 PM<br />
-                      Saturday: 8:00 AM - 1:00 PM<br />
-                      Sunday: Closed
-                    </p>
-                    <p className="text-xs text-gold-600 mt-2 font-semibold">Emergency Support: 24/7</p>
-                  </div>
+              {/* Address */}
+              <div className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-white" size={22} />
                 </div>
+                <div>
+                  <h3 className="font-bold text-navy-500 mb-1">Office</h3>
+                  <p className="text-slate-600 text-sm">
+                    Bypass Mantsholo Road<br />
+                    Eveni, Mbabane<br />
+                    Eswatini
+                  </p>
+                </div>
+              </div>
 
-                {/* Response Times */}
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                  <h3 className="font-bold text-slate-900 mb-4">Response Time Guarantee</h3>
-                  <ul className="space-y-2 text-sm text-slate-600">
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                      Sales inquiries: 2 hours
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                      Support tickets: 1 hour
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-gold-500 rounded-full"></span>
-                      Emergencies: 15 minutes
-                    </li>
-                  </ul>
+              {/* Hours */}
+              <div className="flex gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Clock className="text-white" size={22} />
                 </div>
+                <div>
+                  <h3 className="font-bold text-navy-500 mb-1">Business Hours</h3>
+                  <p className="text-slate-600 text-sm">
+                    Mon - Fri: 8:00 AM – 5:00 PM<br />
+                    Saturday: 8:00 AM – 1:00 PM<br />
+                    Sunday: Closed
+                  </p>
+                  <p className="text-xs text-gold-600 mt-2 font-semibold">Emergency: 24/7</p>
+                </div>
+              </div>
+
+              {/* Response Times */}
+              <div className="p-6 bg-navy-500 rounded-xl text-white">
+                <h3 className="font-bold mb-4">Response Guarantee</h3>
+                <ul className="space-y-2 text-sm text-slate-300">
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gold-400 rounded-full"></span>
+                    Sales inquiries: 2 hours
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gold-400 rounded-full"></span>
+                    Support tickets: 1 hour
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gold-400 rounded-full"></span>
+                    Emergencies: 15 minutes
+                  </li>
+                </ul>
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Form Column */}
             <div className="lg:col-span-2">
-              <div className="bg-white">
+              <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 shadow-card">
                 <h2 className="text-3xl font-bold text-navy-500 mb-2">Send Us a Message</h2>
                 <p className="text-slate-600 mb-8">
-                  Fill out the form below and our team will contact you within 2 hours during business hours.
+                  Fill out the form and our team will contact you within 2 hours during business hours.
                 </p>
                 <ContactForm variant="default" />
               </div>
@@ -124,97 +141,61 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Chat Support */}
-      <section className="section-padding bg-blue-50 border-y border-blue-200">
-        <div className="container-max text-center">
-          <div className="max-w-2xl mx-auto">
-            <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-              <MessageSquare className="text-blue-600" size={32} />
-            </div>
-            <h2 className="text-3xl font-bold text-navy-500 mb-4">Live Chat Support</h2>
-            <p className="text-slate-600 text-lg mb-6">
-              Need immediate assistance? Our support team is available for live chat during business hours.
-            </p>
-            <p className="text-slate-600">
-              <span className="font-semibold">Average response time:</span> 5 minutes<br />
-              <span className="font-semibold">Hours:</span> Mon-Fri 8:00 AM - 5:00 PM
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Existing Customer Support */}
-      <section className="section-padding bg-white">
-        <div className="container-max max-w-2xl mx-auto">
-          <div className="border-2 border-navy-200 rounded-lg p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-navy-500 mb-6">For Existing Customers</h2>
-            <p className="text-slate-600 mb-6">
-              If you're already a BusiQuip customer, you can submit support requests and access your account through our customer portal.
-            </p>
-            <button className="btn-primary bg-blue-600 hover:bg-blue-700">
-              Access Customer Portal
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
+      {/* Map + Office Image */}
       <section className="section-padding bg-slate-50">
+        <div className="container-max">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative rounded-2xl overflow-hidden h-72">
+              <Image
+                src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80"
+                alt="BusiQuip office Mbabane"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-navy-500/50 flex flex-col justify-end p-8">
+                <h3 className="text-white font-bold text-xl mb-1">BusiQuip Headquarters</h3>
+                <p className="text-slate-300 text-sm">Bypass Mantsholo Road, Eveni, Mbabane</p>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden h-72">
+              <Image
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+                alt="Enterprise support team"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-navy-500/50 flex flex-col justify-end p-8">
+                <h3 className="text-white font-bold text-xl mb-1">Expert Support Team</h3>
+                <p className="text-slate-300 text-sm">9 manufacturer-certified technicians ready to help</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-padding bg-white">
         <div className="container-max max-w-3xl">
-          <h2 className="text-3xl font-bold text-navy-500 mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="space-y-6">
-            <details className="group bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition-colors">
-              <summary className="flex items-center justify-between font-bold text-slate-900 group-open:text-blue-600">
-                What's your response time for support requests?
-                <span className="transition group-open:rotate-180">▼</span>
-              </summary>
-              <p className="mt-4 text-slate-600">
-                We aim to respond to all inquiries within 2 hours during business hours (Mon-Fri, 8:00 AM - 5:00 PM). Emergency support is available 24/7 for critical issues.
-              </p>
-            </details>
-
-            <details className="group bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition-colors">
-              <summary className="flex items-center justify-between font-bold text-slate-900 group-open:text-blue-600">
-                Do you offer free consultations?
-                <span className="transition group-open:rotate-180">▼</span>
-              </summary>
-              <p className="mt-4 text-slate-600">
-                Yes! We provide free 1-hour enterprise consultations to understand your challenges and discuss potential solutions. Schedule one through the form above.
-              </p>
-            </details>
-
-            <details className="group bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition-colors">
-              <summary className="flex items-center justify-between font-bold text-slate-900 group-open:text-blue-600">
-                What payment options do you accept?
-                <span className="transition group-open:rotate-180">▼</span>
-              </summary>
-              <p className="mt-4 text-slate-600">
-                We accept major credit cards, bank transfers, and enterprise financing options. Our sales team can discuss custom payment arrangements based on your needs.
-              </p>
-            </details>
-
-            <details className="group bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition-colors">
-              <summary className="flex items-center justify-between font-bold text-slate-900 group-open:text-blue-600">
-                Do you service organizations outside Eswatini?
-                <span className="transition group-open:rotate-180">▼</span>
-              </summary>
-              <p className="mt-4 text-slate-600">
-                While our headquarters is in Mbabane, we serve clients across the SADC region. Contact us to discuss your specific location and needs.
-              </p>
-            </details>
-
-            <details className="group bg-white border border-slate-200 rounded-lg p-6 cursor-pointer hover:border-blue-300 transition-colors">
-              <summary className="flex items-center justify-between font-bold text-slate-900 group-open:text-blue-600">
-                How do I report a billing issue?
-                <span className="transition group-open:rotate-180">▼</span>
-              </summary>
-              <p className="mt-4 text-slate-600">
-                Please contact our billing team at billing@busiquip.com or call 2404 0156 ext. 5. We'll investigate and resolve within 48 hours.
-              </p>
-            </details>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-navy-500">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-4">
+            {[
+              { q: "What's your response time for support requests?", a: "We respond within 2 hours during business hours (Mon-Fri, 8:00 AM - 5:00 PM). Emergency support is available 24/7 for critical issues." },
+              { q: "Do you offer free consultations?", a: "Yes! We provide free 1-hour enterprise consultations. Schedule one through the form above and our team will reach out within 2 hours." },
+              { q: "What payment options do you accept?", a: "We accept major credit cards, bank transfers, and enterprise financing. Our sales team can discuss custom payment arrangements." },
+              { q: "Do you service organizations outside Eswatini?", a: "Our headquarters is in Mbabane but we serve clients across the SADC region. Contact us to discuss your specific location." },
+              { q: "How do I report a billing issue?", a: "Contact billing@busiquip.com or call (+268) 2404 0156. We investigate and resolve all billing issues within 48 hours." },
+            ].map((item, i) => (
+              <details key={i} className="group bg-slate-50 border border-slate-200 rounded-xl p-6 cursor-pointer hover:border-blue-300 transition-colors">
+                <summary className="flex items-center justify-between font-bold text-navy-500 group-open:text-blue-600 list-none">
+                  {item.q}
+                  <span className="ml-4 flex-shrink-0 text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="mt-4 text-slate-600">{item.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -222,15 +203,13 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="section-padding bg-gradient-to-br from-navy-500 to-blue-700 text-white text-center">
         <div className="container-max">
-          <h2 className="text-4xl font-bold mb-6">
-            Still Have Questions?
-          </h2>
-          <p className="text-xl text-slate-100 mb-8 max-w-2xl mx-auto">
-            Our team is here to help. Reach out using any method above and we'll get back to you shortly.
+          <h2 className="text-4xl font-bold mb-6">Still Have Questions?</h2>
+          <p className="text-xl text-slate-200 mb-8 max-w-xl mx-auto">
+            Our team is here to help. Reach out and we'll get back to you promptly.
           </p>
-          <button className="btn-primary bg-gold-500 text-navy-500 hover:bg-gold-400">
-            Call Us Now
-          </button>
+          <a href="tel:+26824040156" className="inline-flex items-center gap-2 px-8 py-4 bg-gold-500 text-navy-500 font-bold rounded-lg hover:bg-gold-400 transition-all text-lg">
+            <Phone size={20} /> Call Us Now
+          </a>
         </div>
       </section>
     </>

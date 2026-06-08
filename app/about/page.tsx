@@ -1,6 +1,6 @@
-import Hero from '@/components/Hero';
 import { CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'About BusiQuip | 40+ Years of Enterprise Excellence',
@@ -10,310 +10,286 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Hero
-        title="About BusiQuip"
-        subtitle="Four Decades of Enterprise Technology Excellence"
-        variant="simple"
-      />
+      {/* Hero */}
+      <section className="relative py-32 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
+          alt="BusiQuip office"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-500/92 to-blue-700/85"></div>
+        <div className="container-max relative z-10">
+          <nav className="text-sm text-slate-300 mb-8">
+            <Link href="/" className="hover:text-gold-400">Home</Link>
+            <span className="mx-2">/</span>
+            <span>About Us</span>
+          </nav>
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-3xl leading-tight">
+            Driving Africa's Digital Future Since{' '}
+            <span className="text-gold-400">1983</span>
+          </h1>
+          <p className="text-xl text-slate-200 max-w-2xl">
+            From a modest office in Mbabane to Eswatini's premier enterprise technology partner — 40+ years of delivering excellence.
+          </p>
+        </div>
+      </section>
 
-      {/* Company Story */}
+      {/* Story + Stats */}
       <section className="section-padding bg-white">
         <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div>
-              <h2 className="text-4xl font-bold text-navy-500 mb-8">
-                Our Journey Since 1983
-              </h2>
+              <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">Our Journey</p>
+              <h2 className="text-4xl font-bold text-navy-500 mb-8">Four Decades of Technological Leadership</h2>
 
               <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-gold-500 mb-3">1983: The Foundation</h3>
-                  <p className="text-slate-600">
-                    Founded on August 8, 1983, in Mbabane, Eswatini, BusiQuip was established with a simple mission: bring world-class technology and support to African enterprises. From our modest beginnings, we built a reputation for reliability, expertise, and customer-first service.
-                  </p>
+                <div className="flex gap-5 pb-8 border-b border-slate-200">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gold-500 rounded-lg flex items-center justify-center">
+                    <span className="text-navy-500 font-bold text-sm">1983</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-navy-500 text-lg mb-2">The Foundation</h3>
+                    <p className="text-slate-600">Founded on August 8, 1983 in Mbabane, Eswatini. Built a reputation for reliability, expertise, and customer-first service from day one.</p>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className="text-2xl font-bold text-gold-500 mb-3">2000s: Regional Expansion</h3>
-                  <p className="text-slate-600">
-                    As Eswatini's economy evolved, so did BusiQuip. We expanded from office equipment distribution to comprehensive technology solutions, earning authorized dealership status with global leaders like Konica Minolta. Our team grew from 2 technicians to the certified specialists we are today.
-                  </p>
+                <div className="flex gap-5 pb-8 border-b border-slate-200">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gold-500 rounded-lg flex items-center justify-center">
+                    <span className="text-navy-500 font-bold text-sm">2000s</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-navy-500 text-lg mb-2">Regional Expansion</h3>
+                    <p className="text-slate-600">Expanded from office equipment to comprehensive technology solutions. Earned Konica Minolta Principal Agency status and grew our certified team.</p>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className="text-2xl font-bold text-gold-500 mb-3">Today: Enterprise Leadership</h3>
-                  <p className="text-slate-600">
-                    With 40+ years of operational excellence, BusiQuip now partners with 36+ major enterprises across government, finance, education, and utilities. We've modernized thousands of workflows, protected critical infrastructure, and enabled digital transformation across the region.
-                  </p>
+                <div className="flex gap-5 pb-8 border-b border-slate-200">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gold-500 rounded-lg flex items-center justify-center">
+                    <span className="text-navy-500 font-bold text-xs text-center">Today</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-navy-500 text-lg mb-2">Enterprise Leadership</h3>
+                    <p className="text-slate-600">36+ major enterprise clients, 9 certified technicians, and a comprehensive solutions portfolio spanning IT, cloud, security, and automation.</p>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className="text-2xl font-bold text-gold-500 mb-3">Tomorrow: Vision for Africa</h3>
-                  <p className="text-slate-600">
-                    We're committed to being the catalyst for digital empowerment across Africa. Every enterprise we partner with is a step toward a more connected, efficient, and prosperous continent.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-navy-500 to-blue-700 rounded-lg p-12 text-white">
-              <div className="space-y-8">
-                <div>
-                  <p className="text-6xl font-bold text-gold-500 mb-2">40+</p>
-                  <p className="text-2xl font-bold">Years of Excellence</p>
-                  <p className="text-slate-300 text-sm mt-2">Established August 8, 1983</p>
-                </div>
-
-                <div className="h-1 bg-gold-500 rounded-full"></div>
-
-                <div>
-                  <p className="text-6xl font-bold text-gold-500 mb-2">36+</p>
-                  <p className="text-2xl font-bold">Major Enterprise Clients</p>
-                  <p className="text-slate-300 text-sm mt-2">Government, Finance, Education, Utilities</p>
-                </div>
-
-                <div className="h-1 bg-gold-500 rounded-full"></div>
-
-                <div>
-                  <p className="text-6xl font-bold text-gold-500 mb-2">9</p>
-                  <p className="text-2xl font-bold">Certified Technicians</p>
-                  <p className="text-slate-300 text-sm mt-2">Manufacturer-trained experts</p>
-                </div>
-
-                <div className="h-1 bg-gold-500 rounded-full"></div>
-
-                <div>
-                  <p className="text-6xl font-bold text-gold-500 mb-2">99.9%</p>
-                  <p className="text-2xl font-bold">Uptime SLA</p>
-                  <p className="text-slate-300 text-sm mt-2">Proactive support & monitoring</p>
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 w-14 h-14 bg-navy-500 rounded-lg flex items-center justify-center">
+                    <span className="text-gold-400 font-bold text-xs text-center">Future</span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-navy-500 text-lg mb-2">Vision for Africa</h3>
+                    <p className="text-slate-600">Committed to being the catalyst for digital empowerment across Africa — providing the tools, skills, and infrastructure for businesses to thrive globally.</p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Images grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative rounded-2xl overflow-hidden h-64">
+                <Image
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80"
+                  alt="Professional team"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden h-64 mt-8">
+                <Image
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+                  alt="Enterprise technology"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden h-64">
+                <Image
+                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80"
+                  alt="Office workspace"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden h-64 mt-8">
+                <Image
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80"
+                  alt="IT infrastructure"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Key Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-navy-500 rounded-2xl p-12">
+            {[
+              { value: '40+', label: 'Years Excellence', sub: 'Since 1983' },
+              { value: '36+', label: 'Enterprise Clients', sub: 'Govt, Finance, Education' },
+              { value: '9', label: 'Expert Technicians', sub: 'Manufacturer certified' },
+              { value: '99.9%', label: 'Uptime SLA', sub: 'Proactive monitoring' },
+            ].map(s => (
+              <div key={s.label} className="text-center">
+                <p className="text-4xl font-bold text-gold-400 mb-2">{s.value}</p>
+                <p className="text-white font-semibold">{s.label}</p>
+                <p className="text-slate-400 text-xs mt-1">{s.sub}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Mission, Vision, Values */}
-      <section className="section-padding bg-slate-50 border-y border-slate-200">
-        <div className="container-max">
-          <h2 className="text-4xl font-bold text-navy-500 mb-16 text-center">
-            Our Mission, Vision & Values
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-            <div className="card text-center">
-              <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl">🎯</span>
-              </div>
-              <h3 className="text-2xl font-bold text-navy-500 mb-4">Our Mission</h3>
-              <p className="text-slate-600 text-lg">
-                To drive digital transformation via trusted technology partnerships, comprehensive training, and secure infrastructure solutions that enable enterprises to thrive in a connected global economy.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl">🌍</span>
-              </div>
-              <h3 className="text-2xl font-bold text-navy-500 mb-4">Our Vision</h3>
-              <p className="text-slate-600 text-lg">
-                Providing the tools, skills, and infrastructure for businesses across Africa to compete globally and achieve sustainable growth through digital empowerment.
-              </p>
-            </div>
-
-            <div className="card text-center">
-              <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl">💎</span>
-              </div>
-              <h3 className="text-2xl font-bold text-navy-500 mb-4">Our Tagline</h3>
-              <p className="text-slate-600 text-lg font-bold">
-                Driving Africa's Digital Future
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="bg-white rounded-lg p-8 border-l-4 border-gold-500">
-              <div className="text-3xl mb-4">✓</div>
-              <h4 className="text-xl font-bold text-navy-500 mb-3">Integrity & Excellence</h4>
-              <p className="text-slate-600 text-sm">
-                We operate with uncompromising honesty and deliver exceptional results. Our 40-year track record is built on keeping promises.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-8 border-l-4 border-gold-500">
-              <div className="text-3xl mb-4">🤝</div>
-              <h4 className="text-xl font-bold text-navy-500 mb-3">Customer Focus & Partnership</h4>
-              <p className="text-slate-600 text-sm">
-                We see ourselves as extensions of your team, not just vendors. Your success is our success.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-8 border-l-4 border-gold-500">
-              <div className="text-3xl mb-4">⚡</div>
-              <h4 className="text-xl font-bold text-navy-500 mb-3">Innovation & Reliability</h4>
-              <p className="text-slate-600 text-sm">
-                We stay ahead of technology trends while ensuring rock-solid stability and proven reliability.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-8 border-l-4 border-gold-500">
-              <div className="text-3xl mb-4">🎓</div>
-              <h4 className="text-xl font-bold text-navy-500 mb-3">Continuous Learning</h4>
-              <p className="text-slate-600 text-sm">
-                Our team undergoes continuous training to stay current with the latest enterprise technologies and best practices.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Competitive Advantages */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <h2 className="text-4xl font-bold text-navy-500 mb-16 text-center">
-            What Sets Us Apart
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gold-500 rounded-lg flex items-center justify-center">
-                  <Award className="text-navy-500" size={24} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy-500 mb-2">Sole Authorized Dealerships</h3>
-                <p className="text-slate-600">
-                  Authentic products and valid warranties for Konica Minolta, Brother, HP/Dell, and OCE. Principal agency status ensures genuine quality and direct support from manufacturers.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gold-500 rounded-lg flex items-center justify-center">
-                  <Users className="text-navy-500" size={24} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy-500 mb-2">Certified Expertise</h3>
-                <p className="text-slate-600">
-                  9 manufacturer-certified technicians with deep expertise in enterprise technology. Continuous training ensures cutting-edge knowledge and professional service delivery.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gold-500 rounded-lg flex items-center justify-center">
-                  <TrendingUp className="text-navy-500" size={24} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy-500 mb-2">Rapid Response</h3>
-                <p className="text-slate-600">
-                  Full local spares and consumables stock in Mbabane for minimal downtime. On-site and in-house support options with guaranteed SLA response times.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-gold-500 rounded-lg flex items-center justify-center">
-                  <CheckCircle className="text-navy-500" size={24} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-navy-500 mb-2">End-to-End Coverage</h3>
-                <p className="text-slate-600">
-                  Comprehensive service from consultation through lifecycle maintenance. Proactive SLAs with 99.9% uptime guarantees and continuous optimization.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
+      {/* Mission / Vision / Values */}
       <section className="section-padding bg-slate-50">
         <div className="container-max">
-          <h2 className="text-4xl font-bold text-navy-500 mb-8 text-center">
-            Meet Our Expert Team
-          </h2>
-          <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto text-lg">
-            Our 9 fully trained, manufacturer-certified technicians bring decades of combined experience to every project. Each team member undergoes continuous training to stay current with the latest enterprise technologies.
-          </p>
+          <div className="text-center mb-16">
+            <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">Our Purpose</p>
+            <h2 className="text-4xl font-bold text-navy-500 mb-4">Mission, Vision & Values</h2>
+          </div>
 
-          <div className="bg-white rounded-lg p-12 border-2 border-slate-200 text-center">
-            <p className="text-slate-600 mb-6">
-              <span className="font-bold">Certifications Include:</span><br />
-              Konica Minolta | Microsoft | CompTIA | Cisco | HP Enterprise | Dell | Cloud Certifications
-            </p>
-            <p className="text-slate-600">
-              <span className="font-bold">Average Experience:</span> 12+ years in enterprise IT
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="relative rounded-2xl overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                alt="Team collaboration"
+                width={800}
+                height={400}
+                className="w-full h-64 object-cover rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-navy-500/70 rounded-2xl flex flex-col justify-end p-8">
+                <h3 className="text-2xl font-bold text-white mb-2">Our Mission</h3>
+                <p className="text-slate-200">
+                  To drive digital transformation via trusted technology partnerships, comprehensive training, and secure infrastructure solutions.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80"
+                alt="Vision and future"
+                width={800}
+                height={400}
+                className="w-full h-64 object-cover rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-blue-700/70 rounded-2xl flex flex-col justify-end p-8">
+                <h3 className="text-2xl font-bold text-white mb-2">Our Vision</h3>
+                <p className="text-slate-200">
+                  Providing the tools, skills, and infrastructure for businesses across Africa to compete globally and achieve sustainable growth.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              { icon: '✓', title: 'Integrity & Excellence', desc: 'Uncompromising honesty and exceptional results. 40 years of keeping promises.' },
+              { icon: '🤝', title: 'Customer Partnership', desc: 'We see ourselves as extensions of your team. Your success is our success.' },
+              { icon: '⚡', title: 'Innovation & Reliability', desc: 'Cutting-edge technology balanced with proven, rock-solid stability.' },
+              { icon: '🎓', title: 'Continuous Learning', desc: 'Our team undergoes ongoing training to stay current with enterprise technologies.' },
+            ].map(v => (
+              <div key={v.title} className="bg-white rounded-xl p-8 border-l-4 border-gold-500 shadow-card">
+                <div className="text-3xl mb-4">{v.icon}</div>
+                <h4 className="text-lg font-bold text-navy-500 mb-3">{v.title}</h4>
+                <p className="text-slate-600 text-sm">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages Section */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">The BusiQuip Advantage</p>
+              <h2 className="text-4xl font-bold text-navy-500 mb-10">What Sets Us Apart</h2>
+              <div className="space-y-8">
+                {[
+                  { icon: Award, title: 'Sole Authorized Dealerships', desc: 'Authentic Konica Minolta, Brother, HP/Dell & OCE products with valid warranties. Principal agency status means genuine quality and direct manufacturer support.' },
+                  { icon: Users, title: 'Certified Expertise', desc: '9 manufacturer-certified technicians with decades of combined experience. Continuous training ensures cutting-edge knowledge and professional delivery.' },
+                  { icon: TrendingUp, title: 'Rapid Response', desc: 'Full local spares and consumables stock in Mbabane. On-site and in-house support with guaranteed SLA response times and minimal downtime.' },
+                  { icon: CheckCircle, title: 'End-to-End Coverage', desc: 'Consultation through lifecycle maintenance. Proactive SLAs with 99.9% uptime guarantees and continuous optimization.' },
+                ].map(({ icon: Icon, title, desc }) => (
+                  <div key={title} className="flex gap-5">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gold-500 rounded-lg flex items-center justify-center">
+                      <Icon className="text-navy-500" size={22} />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-navy-500 text-lg mb-1">{title}</h3>
+                      <p className="text-slate-600 text-sm">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden h-[600px]">
+              <Image
+                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80"
+                alt="Enterprise technology solutions"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-500/60 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <p className="text-white font-bold text-lg mb-1">"Driving Africa's Digital Future"</p>
+                <p className="text-slate-300 text-sm">BusiQuip Ltd. — Established 1983</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Partnerships */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-slate-50">
         <div className="container-max">
-          <h2 className="text-3xl font-bold text-navy-500 mb-12 text-center">
-            Global Partnerships
-          </h2>
-          <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-            Our strategic partnerships with industry leaders ensure you receive genuine products, valid warranties, and world-class support.
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="bg-slate-50 border-2 border-navy-200 rounded-lg p-8 text-center hover:border-gold-500 transition-colors">
-              <p className="font-bold text-navy-500 text-lg mb-2">Konica Minolta</p>
-              <p className="text-sm text-slate-600">Principal Agency</p>
-            </div>
-            <div className="bg-slate-50 border-2 border-navy-200 rounded-lg p-8 text-center hover:border-gold-500 transition-colors">
-              <p className="font-bold text-navy-500 text-lg mb-2">Brother</p>
-              <p className="text-sm text-slate-600">Authorized Distributor</p>
-            </div>
-            <div className="bg-slate-50 border-2 border-navy-200 rounded-lg p-8 text-center hover:border-gold-500 transition-colors">
-              <p className="font-bold text-navy-500 text-lg mb-2">HP / Dell</p>
-              <p className="text-sm text-slate-600">Authorized Reseller</p>
-            </div>
-            <div className="bg-slate-50 border-2 border-navy-200 rounded-lg p-8 text-center hover:border-gold-500 transition-colors">
-              <p className="font-bold text-navy-500 text-lg mb-2">Clearline</p>
-              <p className="text-sm text-slate-600">Sole Distributor</p>
-            </div>
-            <div className="bg-slate-50 border-2 border-navy-200 rounded-lg p-8 text-center hover:border-gold-500 transition-colors">
-              <p className="font-bold text-navy-500 text-lg mb-2">OCE</p>
-              <p className="text-sm text-slate-600">Authorized Reseller</p>
-            </div>
-            <div className="bg-slate-50 border-2 border-navy-200 rounded-lg p-8 text-center hover:border-gold-500 transition-colors">
-              <p className="font-bold text-navy-500 text-lg mb-2">Beswick</p>
-              <p className="text-sm text-slate-600">Office Products</p>
-            </div>
-            <div className="bg-slate-50 border-2 border-navy-200 rounded-lg p-8 text-center hover:border-gold-500 transition-colors">
-              <p className="font-bold text-navy-500 text-lg mb-2">ADC Krone</p>
-              <p className="text-sm text-slate-600">Structured Cabling</p>
-            </div>
-            <div className="bg-slate-50 border-2 border-navy-200 rounded-lg p-8 text-center hover:border-gold-500 transition-colors">
-              <p className="font-bold text-navy-500 text-lg mb-2">Kobra</p>
-              <p className="text-sm text-slate-600">Secure Shredders</p>
-            </div>
+          <div className="text-center mb-12">
+            <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">Global Partnerships</p>
+            <h2 className="text-3xl font-bold text-navy-500 mb-4">World-Class Technology Alliances</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Strategic partnerships ensuring genuine products, valid warranties and world-class local support.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { name: 'Konica Minolta', badge: 'Principal Agency' },
+              { name: 'Brother', badge: 'via Mustek SA' },
+              { name: 'HP / Dell', badge: 'Authorised Reseller' },
+              { name: 'Clearline', badge: 'Sole Distributor' },
+              { name: 'OCE', badge: 'Wide Format' },
+              { name: 'Beswick', badge: 'Office Products' },
+              { name: 'ADC Krone', badge: 'Structured Cabling' },
+              { name: 'Kobra', badge: 'Secure Shredders' },
+            ].map(p => (
+              <div key={p.name} className="bg-white border-2 border-slate-200 rounded-xl p-6 text-center hover:border-gold-500 hover:shadow-card-hover transition-all">
+                <p className="font-bold text-navy-500 text-base mb-1">{p.name}</p>
+                <p className="text-xs text-slate-500">{p.badge}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-navy-500 to-blue-700 text-white">
-        <div className="container-max text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Partner with a Trusted Technology Leader?
-          </h2>
-          <p className="text-xl text-slate-100 mb-8 max-w-2xl mx-auto">
+      <section className="relative section-padding overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&q=80"
+          alt="Modern enterprise office"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-navy-500/90"></div>
+        <div className="container-max relative z-10 text-center text-white">
+          <h2 className="text-4xl font-bold mb-6">Ready to Partner with a Trusted Technology Leader?</h2>
+          <p className="text-xl text-slate-200 mb-8 max-w-2xl mx-auto">
             Let's discuss how BusiQuip can help your enterprise achieve its digital goals.
           </p>
-          <Link href="/contact" className="btn-primary bg-gold-500 text-navy-500 hover:bg-gold-400">
+          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-gold-500 text-navy-500 font-bold rounded-lg hover:bg-gold-400 transition-all text-lg">
             Get in Touch
           </Link>
         </div>

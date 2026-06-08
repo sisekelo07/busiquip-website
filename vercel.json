@@ -3,18 +3,6 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "nodeVersion": "18.x",
-  "env": {
-    "SENDGRID_API_KEY": {
-      "description": "SendGrid API key for sending emails"
-    },
-    "CONTACT_FORM_TO_EMAIL": {
-      "description": "Email address to receive contact form submissions"
-    },
-    "NEXT_PUBLIC_SITE_URL": {
-      "description": "Your website URL (for SEO and canonical tags)"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",

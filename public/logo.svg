@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 90" width="280" height="90">
+  <!-- Globe icon -->
+  <defs>
+    <radialGradient id="globeGrad" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#1a3a6b"/>
+      <stop offset="100%" stop-color="#0a1a3a"/>
+    </radialGradient>
+    <radialGradient id="shineGrad" cx="35%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#4a7ab5" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0a1a3a" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="globeClip">
+      <circle cx="45" cy="40" r="32"/>
+    </clipPath>
+  </defs>
+
+  <!-- Globe background -->
+  <circle cx="45" cy="40" r="34" fill="#0d1f3c" opacity="0.3"/>
+  <circle cx="45" cy="40" r="32" fill="url(#globeGrad)"/>
+
+  <!-- Grid lines on globe -->
+  <!-- Latitude lines -->
+  <ellipse cx="45" cy="40" rx="32" ry="10" fill="none" stroke="#2a4a7a" stroke-width="0.6" clip-path="url(#globeClip)"/>
+  <ellipse cx="45" cy="28" rx="28" ry="7" fill="none" stroke="#2a4a7a" stroke-width="0.6" clip-path="url(#globeClip)"/>
+  <ellipse cx="45" cy="52" rx="28" ry="7" fill="none" stroke="#2a4a7a" stroke-width="0.6" clip-path="url(#globeClip)"/>
+  <!-- Longitude lines -->
+  <line x1="45" y1="8" x2="45" y2="72" stroke="#2a4a7a" stroke-width="0.6" clip-path="url(#globeClip)"/>
+  <ellipse cx="45" cy="40" rx="16" ry="32" fill="none" stroke="#2a4a7a" stroke-width="0.6" clip-path="url(#globeClip)"/>
+  <ellipse cx="45" cy="40" rx="26" ry="32" fill="none" stroke="#2a4a7a" stroke-width="0.6" clip-path="url(#globeClip)"/>
+
+  <!-- Africa continent shape (gold) -->
+  <g clip-path="url(#globeClip)">
+    <path d="M38,22 L42,21 L47,22 L51,26 L52,31 L50,36 L53,40 L52,46 L49,52 L46,57 L43,58 L40,55 L37,50 L35,44 L34,38 L35,32 L37,27 Z"
+          fill="#C9A227" opacity="0.9"/>
+    <!-- Madagascar -->
+    <path d="M55,38 L57,36 L58,40 L57,44 L55,43 Z"
+          fill="#C9A227" opacity="0.8"/>
+  </g>
+
+  <!-- Globe shine -->
+  <circle cx="45" cy="40" r="32" fill="url(#shineGrad)"/>
+
+  <!-- Globe border -->
+  <circle cx="45" cy="40" r="32" fill="none" stroke="#C9A227" stroke-width="1.5"/>
+
+  <!-- Outer ring -->
+  <circle cx="45" cy="40" r="36" fill="none" stroke="#C9A227" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- BUSIQUIP text -->
+  <text x="88" y="38" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="26" fill="#001F3F" letter-spacing="1">BUSIQUIP</text>
+
+  <!-- Tagline -->
+  <text x="88" y="55" font-family="Arial, sans-serif" font-weight="400" font-size="9.5" fill="#001F3F" letter-spacing="1.2">DRIVING AFRICA'S DIGITAL FUTURE.</text>
+
+  <!-- Gold underline under BUSIQUIP -->
+  <line x1="88" y1="42" x2="272" y2="42" stroke="#C9A227" stroke-width="1.2" opacity="0.6"/>
+</svg>
