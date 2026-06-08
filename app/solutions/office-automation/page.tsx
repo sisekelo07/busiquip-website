@@ -75,46 +75,25 @@ export default function OfficeAutomationPage() {
             BusiQuip's office automation solution centers on Konica Minolta BizHub—a trusted, enterprise-grade platform used by thousands of organizations worldwide. We don't just install equipment; we optimize your entire document workflow.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-            <div className="card">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <Zap className="text-blue-600" size={24} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {[
+              { icon: <Zap className="text-white" size={22} />, title: 'Advanced Multifunction Devices', desc: 'Scanning, copying, printing, and faxing in one system with network integration for seamless workflow, user authentication, and encryption.' },
+              { icon: <CheckCircle className="text-white" size={22} />, title: 'Workflow Optimization', desc: 'Automated document routing, filing, and integration with business applications reduces manual work by up to 80%.' },
+              { icon: '💰', title: 'Cost Management', desc: 'Usage tracking, billing allocation, and flexible leasing models provide predictable costs and 40%+ waste reduction.' },
+              { icon: <Shield className="text-white" size={22} />, title: '24/7 Support & SLAs', desc: 'Proactive monitoring, rapid response (4-hour SLA), and preventive maintenance ensure maximum uptime and reliability.' },
+            ].map((item, i) => (
+              <div key={i} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content">
+                  <div className="card-icon-3d" style={typeof item.icon !== 'string' ? { background: 'linear-gradient(135deg,#2563eb,#1d4ed8)', borderColor: 'rgba(37,99,235,0.3)' } : {}}>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-navy-500 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-navy-500 mb-3">Advanced Multifunction Devices</h3>
-              <p className="text-slate-600">
-                Scanning, copying, printing, and faxing in one system with network integration for seamless workflow, user authentication, and encryption.
-              </p>
-            </div>
-
-            <div className="card">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <CheckCircle className="text-blue-600" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-navy-500 mb-3">Workflow Optimization</h3>
-              <p className="text-slate-600">
-                Automated document routing, filing, and integration with business applications reduces manual work by up to 80%.
-              </p>
-            </div>
-
-            <div className="card">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl">💰</span>
-              </div>
-              <h3 className="text-xl font-bold text-navy-500 mb-3">Cost Management</h3>
-              <p className="text-slate-600">
-                Usage tracking, billing allocation, and flexible leasing models provide predictable costs and 40%+ waste reduction.
-              </p>
-            </div>
-
-            <div className="card">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                <Shield className="text-blue-600" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-navy-500 mb-3">24/7 Support & SLAs</h3>
-              <p className="text-slate-600">
-                Proactive monitoring, rapid response (4-hour SLA), and preventive maintenance ensure maximum uptime and reliability.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
