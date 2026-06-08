@@ -13,8 +13,8 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative py-32 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
-          alt="BusiQuip office"
+          src="/about-hero.jpg"
+          alt="BusiQuip team"
           fill
           className="object-cover"
           priority
