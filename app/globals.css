@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-600 antialiased;
+  }
+
+  h1 {
+    @apply text-display-lg text-navy-500;
+  }
+
+  h2 {
+    @apply text-display-md text-navy-500;
+  }
+
+  h3 {
+    @apply text-heading-lg text-navy-500;
+  }
+
+  h4 {
+    @apply text-heading-md text-slate-900;
+  }
+
+  p {
+    @apply text-body-lg;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-7 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-all duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-7 py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-all duration-200 inline-flex items-center gap-2;
+  }
+
+  .btn-text {
+    @apply text-blue-600 font-bold hover:text-blue-700 underline transition-colors;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .card {
+    @apply bg-white border border-slate-200 rounded-xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-navy-500 to-blue-600 bg-clip-text text-transparent;
+  }
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Responsive spacing */
+@screen sm {
+  .container-max {
+    @apply px-4;
+  }
+}
+
+@screen lg {
+  .container-max {
+    @apply px-8;
+  }
+}
