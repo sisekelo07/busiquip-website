@@ -32,46 +32,25 @@ export default function OfficeAutomationPage() {
                 The Enterprise Document Workflow Challenge
               </h2>
 
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                    <span className="text-lg">📄</span>
+              <div className="space-y-4">
+                {[
+                  { icon: '📄', title: 'Manual Processes Consume Resources', desc: 'Document scanning, filing, and retrieval eat up 30-40% of administrative time, costing $50K+ annually' },
+                  { icon: '🔗', title: 'Fragmented Systems & Inefficiency', desc: 'Disparate copiers, printers, and systems create silos, lost documents, and compliance gaps' },
+                  { icon: '📈', title: 'Growing Document Volumes', desc: 'Paper costs, storage requirements, and environmental impact exceed $200 per employee annually' },
+                  { icon: '🔐', title: 'Security & Compliance Risks', desc: 'Unsecured document handling violates regulations, risking audit failures and compliance penalties' },
+                ].map((item) => (
+                  <div key={item.title} className="service-card-3d">
+                    <span className="card-spin-bg" aria-hidden="true" />
+                    <span className="card-bg-mask" aria-hidden="true" />
+                    <div className="card-content" style={{ flexDirection: 'row', gap: '1rem', alignItems: 'flex-start' }}>
+                      <div className="card-icon-3d" style={{ flexShrink: 0, marginBottom: 0 }}>{item.icon}</div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-navy-500 mb-2">{item.title}</h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Manual Processes Consume Resources</h3>
-                    <p className="text-slate-600 text-sm">Document scanning, filing, and retrieval eat up 30-40% of administrative time, costing $50K+ annually</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                    <span className="text-lg">🔗</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Fragmented Systems & Inefficiency</h3>
-                    <p className="text-slate-600 text-sm">Disparate copiers, printers, and systems create silos, lost documents, and compliance gaps</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                    <span className="text-lg">📈</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Growing Document Volumes</h3>
-                    <p className="text-slate-600 text-sm">Paper costs, storage requirements, and environmental impact exceed $200 per employee annually</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                    <span className="text-lg">🔐</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Security & Compliance Risks</h3>
-                    <p className="text-slate-600 text-sm">Unsecured document handling violates regulations, risking audit failures and compliance penalties</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
