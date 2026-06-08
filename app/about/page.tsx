@@ -193,20 +193,24 @@ export default function AboutPage() {
             <div>
               <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">The BusiQuip Advantage</p>
               <h2 className="text-4xl font-bold text-navy-500 mb-10">What Sets Us Apart</h2>
-              <div className="space-y-8">
+              <div className="space-y-4">
                 {[
                   { icon: Award, title: 'Sole Authorized Dealerships', desc: 'Authentic Konica Minolta, Brother, HP/Dell & OCE products with valid warranties. Principal agency status means genuine quality and direct manufacturer support.' },
                   { icon: Users, title: 'Certified Expertise', desc: '9 manufacturer-certified technicians with decades of combined experience. Continuous training ensures cutting-edge knowledge and professional delivery.' },
                   { icon: TrendingUp, title: 'Rapid Response', desc: 'Full local spares and consumables stock in Mbabane. On-site and in-house support with guaranteed SLA response times and minimal downtime.' },
                   { icon: CheckCircle, title: 'End-to-End Coverage', desc: 'Consultation through lifecycle maintenance. Proactive SLAs with 99.9% uptime guarantees and continuous optimization.' },
                 ].map(({ icon: Icon, title, desc }) => (
-                  <div key={title} className="flex gap-5">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gold-500 rounded-lg flex items-center justify-center">
-                      <Icon className="text-navy-500" size={22} />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-navy-500 text-lg mb-1">{title}</h3>
-                      <p className="text-slate-600 text-sm">{desc}</p>
+                  <div key={title} className="service-card-3d">
+                    <span className="card-spin-bg" aria-hidden="true" />
+                    <span className="card-bg-mask" aria-hidden="true" />
+                    <div className="card-content" style={{ flexDirection: 'row', gap: '1rem', alignItems: 'flex-start' }}>
+                      <div className="card-icon-3d" style={{ flexShrink: 0, marginBottom: 0, background: 'linear-gradient(135deg,#D4AF37,#b8860b)', borderColor: 'rgba(212,175,55,0.3)' }}>
+                        <Icon className="text-navy-500" size={22} />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-navy-500 text-lg mb-1">{title}</h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
