@@ -191,10 +191,14 @@ export default function AboutPage() {
               { icon: '⚡', title: 'Innovation & Reliability', desc: 'Cutting-edge technology balanced with proven, rock-solid stability.' },
               { icon: '🎓', title: 'Continuous Learning', desc: 'Our team undergoes ongoing training to stay current with enterprise technologies.' },
             ].map(v => (
-              <div key={v.title} className="bg-white rounded-xl p-8 border-l-4 border-gold-500 shadow-card">
-                <div className="text-3xl mb-4">{v.icon}</div>
-                <h4 className="text-lg font-bold text-navy-500 mb-3">{v.title}</h4>
-                <p className="text-slate-600 text-sm">{v.desc}</p>
+              <div key={v.title} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content">
+                  <div className="card-icon-3d">{v.icon}</div>
+                  <h4 className="text-lg font-bold text-navy-500 mb-3">{v.title}</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
+                </div>
               </div>
             ))}
           </div>
