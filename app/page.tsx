@@ -470,18 +470,60 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { name: 'Konica Minolta', badge: 'Principal Agency' },
-              { name: 'Brother', badge: 'via Mustek SA' },
-              { name: 'HP / Dell', badge: 'Authorised Reseller' },
-              { name: 'Clearline', badge: 'Sole Distributor' },
-              { name: 'OCE', badge: 'Authorised Reseller' },
-              { name: 'Beswick', badge: 'Office Products' },
-              { name: 'ADC Krone', badge: 'Structured Cabling' },
-              { name: 'Kobra', badge: 'Secure Shredders' },
+              {
+                name: 'Konica Minolta', badge: 'Principal Agency',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Logo_Konica_Minolta.svg',
+              },
+              {
+                name: 'Brother', badge: 'via Mustek SA',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Brother_logo.svg',
+              },
+              {
+                name: 'HP / Dell', badge: 'Authorised Reseller',
+                logos: [
+                  'https://upload.wikimedia.org/wikipedia/commons/0/05/HP_logo_2025.svg',
+                  'https://upload.wikimedia.org/wikipedia/commons/5/56/Dell_Technologies_logo.svg',
+                ],
+              },
+              {
+                name: 'Clearline', badge: 'Sole Distributor',
+                logo: null,
+              },
+              {
+                name: 'OCE', badge: 'Authorised Reseller',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/8/8f/OCE_logo_%282017%29.svg',
+              },
+              {
+                name: 'Beswick', badge: 'Office Products',
+                logo: null,
+              },
+              {
+                name: 'ADC Krone', badge: 'Structured Cabling',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/48/Commscope-logo.png',
+              },
+              {
+                name: 'Kobra', badge: 'Secure Shredders',
+                logo: 'https://www.kobra-shredder.com/cdn/shop/files/Kobra-Shredders-CBM-Logo_170x@2x.png?v=1689236738',
+              },
             ].map(p => (
-              <div key={p.name} className="border-2 border-slate-200 rounded-xl p-6 text-center hover:border-gold-500 hover:shadow-card-hover transition-all">
-                <p className="font-bold text-navy-500 text-base mb-1">{p.name}</p>
-                <p className="text-xs text-slate-500">{p.badge}</p>
+              <div key={p.name} className="partner-card">
+                <div className="partner-logo-wrap">
+                  {'logos' in p && p.logos ? (
+                    <div className="flex items-center justify-center gap-3 w-full">
+                      {p.logos.map((src, i) => (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img key={i} src={src} alt={p.name} loading="lazy" className="partner-logo-img partner-logo-split" />
+                      ))}
+                    </div>
+                  ) : p.logo ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img src={p.logo} alt={p.name} loading="lazy" className="partner-logo-img" />
+                  ) : (
+                    <span className="partner-logo-text">{p.name}</span>
+                  )}
+                </div>
+                <p className="partner-name">{p.name}</p>
+                <p className="partner-badge">{p.badge}</p>
               </div>
             ))}
           </div>
