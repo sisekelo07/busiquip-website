@@ -242,16 +242,16 @@ export default function Home() {
                 href: '/services/web-software-development',
               },
             ].map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="group card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col bg-white"
-              >
-                <div className="text-4xl mb-4">{s.icon}</div>
-                <h3 className="text-xl font-bold text-navy-500 mb-3">{s.title}</h3>
-                <p className="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">{s.desc}</p>
-                <div className="flex items-center gap-2 text-blue-600 font-bold group-hover:gap-3 transition-all mt-auto">
-                  Learn More <ArrowRight size={16} />
+              <Link key={s.href} href={s.href} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content">
+                  <div className="card-icon-3d">{s.icon}</div>
+                  <h3 className="text-xl font-bold text-navy-500 mb-3">{s.title}</h3>
+                  <p className="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">{s.desc}</p>
+                  <div className="card-cta">
+                    Learn More <ArrowRight size={16} />
+                  </div>
                 </div>
               </Link>
             ))}

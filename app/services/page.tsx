@@ -87,16 +87,20 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s) => (
-              <Link key={s.href} href={s.href} className="group card hover:shadow-card-hover hover:-translate-y-2 transition-all duration-300 flex flex-col">
-                <div className="relative rounded-xl overflow-hidden h-44 mb-6 -mx-2 -mt-2">
-                  <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-navy-500/40" />
-                  <div className="absolute top-4 left-4 text-3xl">{s.icon}</div>
-                </div>
-                <h3 className="text-xl font-bold text-navy-500 mb-3">{s.title}</h3>
-                <p className="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">{s.desc}</p>
-                <div className="flex items-center gap-2 text-blue-600 font-bold group-hover:gap-3 transition-all mt-auto">
-                  Learn More <ArrowRight size={16} />
+              <Link key={s.href} href={s.href} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content">
+                  <div className="relative rounded-xl overflow-hidden h-44 mb-6 -mx-2 -mt-2 flex-shrink-0">
+                    <Image src={s.image} alt={s.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-navy-500/40" />
+                    <div className="absolute top-4 left-4 text-3xl">{s.icon}</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-navy-500 mb-3">{s.title}</h3>
+                  <p className="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">{s.desc}</p>
+                  <div className="card-cta">
+                    Learn More <ArrowRight size={16} />
+                  </div>
                 </div>
               </Link>
             ))}

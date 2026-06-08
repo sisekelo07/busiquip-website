@@ -88,6 +88,133 @@
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
+/* ===== 3D Service Cards ===== */
+@keyframes spinBorder {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.service-card-3d {
+  position: relative;
+  border-radius: 20px;
+  padding: 2.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  outline: 1.5px solid rgba(0, 31, 63, 0.13);
+  background: transparent;
+  transition:
+    transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.5s ease,
+    outline-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  text-decoration: none;
+}
+
+/* Spinning conic-gradient border ring */
+.service-card-3d .card-spin-bg {
+  position: absolute;
+  inset: -120%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 18%,
+    #001F3F 28%,
+    rgba(255, 255, 255, 0.95) 43%,
+    #001F3F 54%,
+    rgba(255, 255, 255, 0.4) 66%,
+    transparent 76%
+  );
+  animation: spinBorder 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* White inner background */
+.service-card-3d .card-bg-mask {
+  position: absolute;
+  inset: 2px;
+  border-radius: 18px;
+  background: #ffffff;
+  transition: background 0.45s ease;
+  pointer-events: none;
+}
+
+/* Content layer sits above the bg effects */
+.service-card-3d .card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* 3D lift + tilt on hover */
+.service-card-3d:hover {
+  outline-color: transparent;
+  transform: perspective(900px) translateY(-20px) rotateX(8deg) rotateY(-4deg) scale(1.025);
+  box-shadow:
+    0 50px 80px -10px rgba(0, 31, 63, 0.22),
+    0 25px 40px rgba(0, 31, 63, 0.14),
+    0 0 0 1px rgba(0, 31, 63, 0.06);
+}
+
+.service-card-3d:hover .card-spin-bg {
+  opacity: 1;
+}
+
+.service-card-3d:hover .card-bg-mask {
+  background: linear-gradient(155deg, #ffffff 60%, #eef3ff);
+}
+
+/* Icon badge */
+.service-card-3d .card-icon-3d {
+  display: inline-flex;
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, rgba(0, 31, 63, 0.06), rgba(0, 31, 63, 0.11));
+  border: 1px solid rgba(0, 31, 63, 0.11);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  flex-shrink: 0;
+}
+
+.service-card-3d:hover .card-icon-3d {
+  transform: translateY(-8px) scale(1.15);
+  background: linear-gradient(135deg, rgba(0, 31, 63, 0.09), rgba(0, 31, 63, 0.17));
+  border-color: rgba(0, 31, 63, 0.28);
+  box-shadow:
+    0 14px 28px rgba(0, 31, 63, 0.18),
+    0 0 0 5px rgba(0, 31, 63, 0.05);
+}
+
+/* CTA arrow row */
+.service-card-3d .card-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2563eb;
+  font-weight: 700;
+  margin-top: auto;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.service-card-3d:hover .card-cta {
+  gap: 0.85rem;
+  color: #001F3F;
+}
+
+/* ===== Responsive spacing ===== */
 /* Responsive spacing */
 @screen sm {
   .container-max {
