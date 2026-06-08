@@ -4,7 +4,6 @@ import {
   Network,
   Smartphone,
   Lock,
-  CheckCircle,
   ArrowRight,
   Users,
   TrendingUp,
@@ -349,72 +348,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Clients Section */}
-      <section className="section-padding bg-white border-y border-slate-200">
-        <div className="container-max">
-          <div className="text-center mb-16">
-            <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">Our Clients</p>
-            <h2 className="text-4xl font-bold text-navy-500 mb-4">
-              Trusted by Eswatini's Leading Organizations
-            </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              From government ministries to major financial institutions — 36+ enterprises rely on BusiQuip.
-            </p>
-          </div>
+      {/* Clients Slideshow */}
+      <section className="py-20 bg-white border-y border-slate-200 overflow-hidden">
+        <div className="container-max mb-14 text-center">
+          <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">Our Clients</p>
+          <h2 className="text-4xl font-bold text-navy-500 mb-4">
+            Trusted by Eswatini&apos;s Leading Organizations
+          </h2>
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            From government ministries to major financial institutions — 36+ enterprises rely on BusiQuip.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-xl">🏛️</div>
-                <h3 className="font-bold text-navy-500 text-lg">Government</h3>
+        {/* Marquee row 1 — scrolls left */}
+        <div className="relative">
+          <div className="clients-marquee clients-marquee-left">
+            {[
+              { name: 'Ministry of Defence', abbr: 'MoD', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
+              { name: 'Standard Bank', abbr: 'SB', sector: 'Finance', bg: '#0033A0', accent: '#ffffff' },
+              { name: 'University of Eswatini', abbr: 'UNISWA', sector: 'Education', bg: '#6B2D8B', accent: '#ffffff' },
+              { name: 'Swaziland Electricity Board', abbr: 'SEB', sector: 'Utilities', bg: '#D4AF37', accent: '#001F3F' },
+              { name: 'Eswatini Bank', abbr: 'EB', sector: 'Finance', bg: '#004B87', accent: '#F5A623' },
+              { name: 'High Court', abbr: 'HC', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
+              { name: 'FINCORP', abbr: 'FC', sector: 'Finance', bg: '#00543A', accent: '#ffffff' },
+              { name: 'Exams Council', abbr: 'EC', sector: 'Education', bg: '#1A5276', accent: '#ffffff' },
+              { name: 'Eswatini Water Services', abbr: 'EWS', sector: 'Utilities', bg: '#1A6B8A', accent: '#ffffff' },
+              { name: 'City Council Mbabane', abbr: 'CCM', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
+              { name: 'Tibiyo Insurance', abbr: 'TI', sector: 'Finance', bg: '#154360', accent: '#D4AF37' },
+              { name: 'Usutu Forest', abbr: 'UF', sector: 'Utilities', bg: '#196F3D', accent: '#ffffff' },
+            ].flatMap((c, i) => [c, { ...c, key: `${i}-dup` }]).map((c, i) => (
+              <div key={i} className="client-tile">
+                <div className="client-tile-logo" style={{ background: c.bg, color: c.accent }}>
+                  {c.abbr}
+                </div>
+                <div className="client-tile-body">
+                  <p className="client-tile-name">{c.name}</p>
+                  <span className="client-tile-sector">{c.sector}</span>
+                </div>
               </div>
-              <ul className="space-y-3 text-slate-600 text-sm">
-                {['Ministry of Defence', 'High Court', 'City Council Mbabane'].map(c => (
-                  <li key={c} className="flex items-center gap-2">
-                    <CheckCircle size={15} className="text-gold-500 flex-shrink-0" />{c}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-xl">🏦</div>
-                <h3 className="font-bold text-navy-500 text-lg">Finance</h3>
+            ))}
+          </div>
+        </div>
+
+        {/* Marquee row 2 — scrolls right (reverse) */}
+        <div className="relative mt-5">
+          <div className="clients-marquee clients-marquee-right">
+            {[
+              { name: 'Tibiyo Insurance', abbr: 'TI', sector: 'Finance', bg: '#154360', accent: '#D4AF37' },
+              { name: 'Usutu Forest', abbr: 'UF', sector: 'Utilities', bg: '#196F3D', accent: '#ffffff' },
+              { name: 'City Council Mbabane', abbr: 'CCM', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
+              { name: 'Eswatini Water Services', abbr: 'EWS', sector: 'Utilities', bg: '#1A6B8A', accent: '#ffffff' },
+              { name: 'Exams Council', abbr: 'EC', sector: 'Education', bg: '#1A5276', accent: '#ffffff' },
+              { name: 'FINCORP', abbr: 'FC', sector: 'Finance', bg: '#00543A', accent: '#ffffff' },
+              { name: 'High Court', abbr: 'HC', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
+              { name: 'Eswatini Bank', abbr: 'EB', sector: 'Finance', bg: '#004B87', accent: '#F5A623' },
+              { name: 'Swaziland Electricity Board', abbr: 'SEB', sector: 'Utilities', bg: '#D4AF37', accent: '#001F3F' },
+              { name: 'University of Eswatini', abbr: 'UNISWA', sector: 'Education', bg: '#6B2D8B', accent: '#ffffff' },
+              { name: 'Standard Bank', abbr: 'SB', sector: 'Finance', bg: '#0033A0', accent: '#ffffff' },
+              { name: 'Ministry of Defence', abbr: 'MoD', sector: 'Government', bg: '#001F3F', accent: '#D4AF37' },
+            ].flatMap((c, i) => [c, { ...c, key: `${i}-dup` }]).map((c, i) => (
+              <div key={i} className="client-tile">
+                <div className="client-tile-logo" style={{ background: c.bg, color: c.accent }}>
+                  {c.abbr}
+                </div>
+                <div className="client-tile-body">
+                  <p className="client-tile-name">{c.name}</p>
+                  <span className="client-tile-sector">{c.sector}</span>
+                </div>
               </div>
-              <ul className="space-y-3 text-slate-600 text-sm">
-                {['Standard Bank', 'Eswatini Bank', 'FINCORP', 'Tibiyo Insurance'].map(c => (
-                  <li key={c} className="flex items-center gap-2">
-                    <CheckCircle size={15} className="text-gold-500 flex-shrink-0" />{c}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-xl">📚</div>
-                <h3 className="font-bold text-navy-500 text-lg">Education</h3>
-              </div>
-              <ul className="space-y-3 text-slate-600 text-sm">
-                {['University of Eswatini (UNISWA)', 'Exams Council'].map(c => (
-                  <li key={c} className="flex items-center gap-2">
-                    <CheckCircle size={15} className="text-gold-500 flex-shrink-0" />{c}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-xl">⚡</div>
-                <h3 className="font-bold text-navy-500 text-lg">Utilities</h3>
-              </div>
-              <ul className="space-y-3 text-slate-600 text-sm">
-                {['Swaziland Electricity Board', 'Eswatini Water Services', 'Usutu Forest'].map(c => (
-                  <li key={c} className="flex items-center gap-2">
-                    <CheckCircle size={15} className="text-gold-500 flex-shrink-0" />{c}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
