@@ -1,4 +1,4 @@
-import { CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
+import { CheckCircle, Users, Award, TrendingUp, Target, Eye } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -151,34 +151,34 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="relative rounded-2xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                alt="Team collaboration"
-                width={800}
-                height={400}
-                className="w-full h-64 object-cover rounded-2xl"
-              />
-              <div className="absolute inset-0 bg-navy-500/70 rounded-2xl flex flex-col justify-end p-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Our Mission</h3>
-                <p className="text-slate-200">
-                  To drive digital transformation via trusted technology partnerships, comprehensive training, and secure infrastructure solutions.
+            {/* Mission */}
+            <div className="mv-card">
+              {/* Large watermark word */}
+              <span className="mv-watermark">MISSION</span>
+              {/* Background icon */}
+              <div className="mv-icon-bg">
+                <Target size={260} strokeWidth={0.8} />
+              </div>
+              <div className="mv-content">
+                <p className="mv-label">MISSION</p>
+                <h3 className="mv-title">Drive Africa&apos;s digital transformation.</h3>
+                <p className="mv-desc">
+                  We deliver digital platforms, training, connectivity, and secure technology solutions that modernize operations, improve productivity, and unlock new economic opportunities.
                 </p>
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80"
-                alt="Vision and future"
-                width={800}
-                height={400}
-                className="w-full h-64 object-cover rounded-2xl"
-              />
-              <div className="absolute inset-0 bg-blue-700/70 rounded-2xl flex flex-col justify-end p-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Our Vision</h3>
-                <p className="text-slate-200">
-                  Providing the tools, skills, and infrastructure for businesses across Africa to compete globally and achieve sustainable growth.
+            {/* Vision */}
+            <div className="mv-card">
+              <span className="mv-watermark">VISION</span>
+              <div className="mv-icon-bg">
+                <Eye size={260} strokeWidth={0.8} />
+              </div>
+              <div className="mv-content">
+                <p className="mv-label">VISION</p>
+                <h3 className="mv-title">Build a digitally empowered Africa.</h3>
+                <p className="mv-desc">
+                  Businesses, institutions, and communities should have the tools, skills, and infrastructure to thrive in a connected global economy.
                 </p>
               </div>
             </div>

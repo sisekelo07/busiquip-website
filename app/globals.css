@@ -329,6 +329,84 @@
   max-width: 160px;
 }
 
+/* ===== Mission / Vision Dark Cards ===== */
+.mv-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 2.5rem;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(135deg, #0d0d1f 0%, #1a1535 55%, #0f1629 100%);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(168, 85, 247, 0.25);
+}
+
+/* Large background icon */
+.mv-icon-bg {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  color: rgba(99, 102, 241, 0.18);
+  pointer-events: none;
+  line-height: 0;
+  transition: transform 0.5s ease, color 0.4s ease;
+}
+
+.mv-card:hover .mv-icon-bg {
+  transform: scale(1.08) rotate(-5deg);
+  color: rgba(139, 92, 246, 0.25);
+}
+
+/* Faint watermark word behind content */
+.mv-watermark {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.75rem;
+  font-size: 70px;
+  font-weight: 900;
+  color: rgba(139, 92, 246, 0.07);
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Content */
+.mv-content {
+  position: relative;
+  z-index: 1;
+}
+
+.mv-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #a855f7;
+  margin-bottom: 0.75rem;
+}
+
+.mv-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.mv-desc {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* Contact icon wrap inside 3D cards */
 .contact-icon-wrap {
   width: 48px;
