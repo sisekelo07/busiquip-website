@@ -44,46 +44,27 @@ export default function AboutPage() {
               <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">Our Journey</p>
               <h2 className="text-4xl font-bold text-navy-500 mb-8">Four Decades of Technological Leadership</h2>
 
-              <div className="space-y-8">
-                <div className="flex gap-5 pb-8 border-b border-slate-200">
-                  <div className="flex-shrink-0 w-14 h-14 bg-gold-500 rounded-lg flex items-center justify-center">
-                    <span className="text-navy-500 font-bold text-sm">1983</span>
+              <div className="space-y-4">
+                {[
+                  { era: '1983', title: 'The Foundation', desc: 'Founded on August 8, 1983 in Mbabane, Eswatini. Built a reputation for reliability, expertise, and customer-first service from day one.', bg: '#D4AF37', color: '#001F3F' },
+                  { era: '2000s', title: 'Regional Expansion', desc: 'Expanded from office equipment to comprehensive technology solutions. Earned Konica Minolta Principal Agency status and grew our certified team.', bg: '#D4AF37', color: '#001F3F' },
+                  { era: 'Today', title: 'Enterprise Leadership', desc: '36+ major enterprise clients, 9 certified technicians, and a comprehensive solutions portfolio spanning IT, cloud, security, and automation.', bg: '#D4AF37', color: '#001F3F' },
+                  { era: 'Future', title: 'Vision for Africa', desc: 'Committed to being the catalyst for digital empowerment across Africa — providing the tools, skills, and infrastructure for businesses to thrive globally.', bg: '#001F3F', color: '#D4AF37' },
+                ].map((item) => (
+                  <div key={item.title} className="service-card-3d">
+                    <span className="card-spin-bg" aria-hidden="true" />
+                    <span className="card-bg-mask" aria-hidden="true" />
+                    <div className="card-content" style={{ flexDirection: 'row', gap: '1rem', alignItems: 'flex-start' }}>
+                      <div className="card-icon-3d" style={{ flexShrink: 0, marginBottom: 0, background: item.bg, borderColor: 'rgba(0,0,0,0.1)', fontSize: '12px', fontWeight: 800, color: item.color, letterSpacing: '0.02em' }}>
+                        {item.era}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-navy-500 text-lg mb-1">{item.title}</h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-navy-500 text-lg mb-2">The Foundation</h3>
-                    <p className="text-slate-600">Founded on August 8, 1983 in Mbabane, Eswatini. Built a reputation for reliability, expertise, and customer-first service from day one.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-5 pb-8 border-b border-slate-200">
-                  <div className="flex-shrink-0 w-14 h-14 bg-gold-500 rounded-lg flex items-center justify-center">
-                    <span className="text-navy-500 font-bold text-sm">2000s</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-navy-500 text-lg mb-2">Regional Expansion</h3>
-                    <p className="text-slate-600">Expanded from office equipment to comprehensive technology solutions. Earned Konica Minolta Principal Agency status and grew our certified team.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-5 pb-8 border-b border-slate-200">
-                  <div className="flex-shrink-0 w-14 h-14 bg-gold-500 rounded-lg flex items-center justify-center">
-                    <span className="text-navy-500 font-bold text-xs text-center">Today</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-navy-500 text-lg mb-2">Enterprise Leadership</h3>
-                    <p className="text-slate-600">36+ major enterprise clients, 9 certified technicians, and a comprehensive solutions portfolio spanning IT, cloud, security, and automation.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-5">
-                  <div className="flex-shrink-0 w-14 h-14 bg-navy-500 rounded-lg flex items-center justify-center">
-                    <span className="text-gold-400 font-bold text-xs text-center">Future</span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-navy-500 text-lg mb-2">Vision for Africa</h3>
-                    <p className="text-slate-600">Committed to being the catalyst for digital empowerment across Africa — providing the tools, skills, and infrastructure for businesses to thrive globally.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 

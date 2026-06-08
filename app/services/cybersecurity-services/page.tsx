@@ -88,6 +88,36 @@ export default function CybersecurityServicesPage() {
         </div>
       </section>
 
+      {/* Digital Security Services */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="text-center mb-12">
+            <p className="text-gold-500 font-semibold uppercase tracking-wider mb-3">Digital Defence</p>
+            <h2 className="text-3xl font-bold text-navy-500">Modern Cyber Threats We Address</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { icon: '📧', title: 'Email Security', desc: 'Anti-phishing, anti-spoofing, DMARC/DKIM/SPF enforcement, attachment sandboxing and link rewriting on Microsoft 365 and Google Workspace.' },
+              { icon: '🛡️', title: 'Microsoft 365 / Google Workspace Hardening', desc: 'A 5-day hardening sprint that lifts a typical Eswatini tenant from a Secure Score of 30 to 80%+.' },
+              { icon: '💾', title: 'Immutable Backups', desc: "Backups that can't be deleted or encrypted by ransomware, with quarterly restore drills to prove they work." },
+              { icon: '🎓', title: 'Security Awareness Training', desc: 'Quarterly online training and simulated phishing campaigns — staff who learn to spot phishing in a safe environment before attackers find them.' },
+            ].map((item) => (
+              <div key={item.title} className="service-card-3d">
+                <span className="card-spin-bg" aria-hidden="true" />
+                <span className="card-bg-mask" aria-hidden="true" />
+                <div className="card-content" style={{ flexDirection: 'row', gap: '1rem', alignItems: 'flex-start' }}>
+                  <div className="card-icon-3d" style={{ flexShrink: 0, marginBottom: 0 }}>{item.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-navy-500 mb-2">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-navy-500 text-white text-center">
         <div className="container-max">
           <h2 className="text-4xl font-bold mb-6">Is Your Organisation Truly Secure?</h2>
