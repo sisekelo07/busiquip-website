@@ -54,9 +54,14 @@ export default function DigitalTransformationPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact" className="btn-primary bg-blue-600 hover:bg-blue-700 inline-flex items-center gap-2">
-                Start Your Transformation <ArrowRight size={18} />
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="btn-primary bg-blue-600 hover:bg-blue-700 inline-flex items-center gap-2">
+                  Start Your Transformation <ArrowRight size={18} />
+                </Link>
+                <Link href="/services/cybersecurity-services" className="btn-secondary inline-flex items-center gap-2">
+                  Learn More: Cybersecurity <ArrowRight size={18} />
+                </Link>
+              </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden h-[500px]">
               <Image src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Digital Transformation" fill className="object-cover" />
