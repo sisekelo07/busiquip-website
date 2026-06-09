@@ -31,7 +31,7 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Solutions</h4>
+            <h4 className="font-bold text-lg mb-6 text-white">Solutions</h4>
             <ul className="space-y-3 text-slate-300 text-sm">
               <li>
                 <Link href="/solutions/office-automation" className="hover:text-gold-500 transition-colors">
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Company</h4>
+            <h4 className="font-bold text-lg mb-6 text-white">Company</h4>
             <ul className="space-y-3 text-slate-300 text-sm">
               <li>
                 <Link href="/about" className="hover:text-gold-500 transition-colors">
@@ -85,7 +85,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Contact Us</h4>
+            <h4 className="font-bold text-lg mb-6 text-white">Contact Us</h4>
             <ul className="space-y-4 text-slate-300 text-sm">
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-gold-500 mt-1 flex-shrink-0" />
